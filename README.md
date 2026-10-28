@@ -1,65 +1,68 @@
-# 🔬 Forensic Science Nexus Portfolio (Fullstack React)
+# 🔬 Forensic Science Nexus Portfolio (React Frontend + Node.js Backend)
 
-> An interactive, cyber-minimalist forensic science portfolio and digital laboratory showcase developed by **Priya Saini**, built entirely in **React & Next.js** (Unified React Frontend + React API Backend).
-
----
-
-## 🌟 Highlights & Features
-
-- **Unified React Architecture**: Both frontend UI and backend REST API routes are written entirely in React and Next.js App Router (no separate backend server needed!).
-- **Priya Saini Portfolio**: Case studies in *Digital Footprint Recovery*, *Fire Debris Analysis*, *Trace DNA Profiling*, and *Microscopic Striation Matching*.
-- **Interactive 3D Evidence Reconstruction**: Real-time Three.js scene featuring cyber-forensic particle grids, rotating holographic evidence cubes, and trajectory laser vectors.
-- **Digital Lab WebGL Shader**: Animated cyber-forensic background with dynamic scanlines and an on/off toggle.
-- **Fullstack React API Endpoints**:
-  - `GET /api` - System health and available endpoints
-  - `GET /api/test` - Verification test route
-  - `GET /api/cases` - Dynamic forensic case archives with category filtering
-  - `POST /api/contact` - Case intake and consultation submission system
-- **Filterable Case Dossier Modal**: Interactive inspection of evidentiary findings, short tandem repeat (STR) loci, and chain-of-custody tracking.
-- **Intake Logging System**: Direct casework requests generate verified case reference codes (e.g. `FN-XXXX-2024`).
+> An interactive, cyber-minimalist forensic science portfolio and digital laboratory showcase developed by **Priya Saini**, featuring a modern **React Frontend** paired with a robust **Node.js Backend**.
 
 ---
 
-## 📁 Project Structure
+## 🏛️ System Architecture
 
-```
-├── app/
-│   ├── layout.jsx                             # Root layout & SEO metadata
-│   ├── globals.css                            # Vanilla CSS cyber-forensic design system
-│   ├── page.jsx                               # Main fullstack React page
-│   └── api/                                   # Next.js React Backend API Routes
-│       ├── route.js                           # Root API status
-│       ├── test/route.js                      # Test route
-│       ├── cases/route.js                     # Case studies API
-│       └── contact/route.js                   # Consultation intake API
+```text
+stitch_forensic_nexus_portfolio/
 │
-├── components/                                # Modular React UI Components
-│   ├── Navbar.jsx                             # Navigation with live API health indicator
-│   ├── Hero.jsx                               # Headline, metrics ticker & bio
-│   ├── ThreeForensicScene.jsx                 # Interactive Three.js 3D scene
-│   ├── ShaderBackdrop.jsx                     # WebGL canvas background shader
-│   ├── CaseStudies.jsx                        # Case files grid & modal dossier
-│   ├── LabTimeline.jsx                        # Chronological experience timeline
-│   ├── InvestigationForm.jsx                  # Consultation intake form
-│   └── Footer.jsx                             # Links & system indicators
+├── 📂 frontend/                                  # ⚛️ REACT FRONTEND (Vite + React 18)
+│   ├── package.json                              # React, React-DOM, Three.js, Vite
+│   ├── vite.config.js                            # Dev proxy to Node.js backend
+│   ├── index.html                                # HTML root
+│   └── src/
+│       ├── main.jsx                              # React bootstrap
+│       ├── App.jsx                               # Main application flow
+│       ├── index.css                             # Cyber-forensic design system (Vanilla CSS)
+│       └── components/                           # Modular React UI components
+│           ├── Navbar.jsx                        # Live Node.js API health status
+│           ├── Hero.jsx                          # Headlines & forensic metrics
+│           ├── ThreeForensicScene.jsx            # 3D Three.js evidence reconstructor
+│           ├── ShaderBackdrop.jsx                # WebGL animated canvas shader
+│           ├── CaseStudies.jsx                   # Filterable case files & dossier modal
+│           ├── LabTimeline.jsx                   # Chronological experience log
+│           ├── InvestigationForm.jsx             # Secure intake form (Posts to Node.js)
+│           └── Footer.jsx                        # Protocol details & links
 │
-├── package.json                               # Next.js, React, Three.js dependencies
-└── next.config.mjs                            # Next.js configuration
+└── 📂 backend/                                   # 🟢 NODE.JS BACKEND (Express.js REST API)
+    ├── package.json                              # Express, Cors, Dotenv
+    ├── server.js                                 # REST API Server on port 5000
+    └── .env                                      # Environment configuration
 ```
 
 ---
 
-## 🚀 Quick Start Guide
+## 🌐 Node.js REST API Endpoints
 
-### 1. Install Dependencies
+| Endpoint | Method | Description |
+| :--- | :---: | :--- |
+| **`/api`** | `GET` | System health, runtime version (`Node.js v24.19.0`), and route map |
+| **`/api/test`** | `GET` | Verification test route (`{"message": "Backend is working in Node.js!"}`) |
+| **`/api/cases`** | `GET` | Full forensic cases database with optional `?category=` filtering |
+| **`/api/contact`** | `POST` | Secure intake & consultation logging, returns reference code (`FN-XXXX-2026`) |
+
+---
+
+## 🚀 How to Run Locally
+
+### 1. Start the Node.js Backend Server
 ```bash
+cd backend
 npm install
+node server.js
 ```
+* **Node.js Backend URL:** [http://localhost:5000](http://localhost:5000)
+* Test route: [http://localhost:5000/api/test](http://localhost:5000/api/test)
 
-### 2. Run the Unified React Development Server
+### 2. Start the React Frontend
 ```bash
+cd frontend
+npm install
 npm run dev
 ```
+* **React Frontend URL:** [http://localhost:5173](http://localhost:5173)
 
-* Open [http://localhost:5000](http://localhost:5000) in your browser.
-* Both your React Frontend and React Backend API will be running seamlessly on port 5000.
+The React frontend automatically connects to the Node.js backend server!
