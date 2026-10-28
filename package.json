@@ -1,0 +1,19 @@
+{
+  "name": "forensic-nexus-react",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fullstack Next.js React Portfolio & Forensic Digital Lab",
+  "scripts": {
+    "dev": "next dev -p 5000",
+    "build": "next build",
+    "start": "next start -p 5000",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^14.2.23",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.160.0",
+    "lucide-react": "^0.344.0"
+  }
+}
