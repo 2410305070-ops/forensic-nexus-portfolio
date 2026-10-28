@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Priya Saini | Forensic Science Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Inter:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#adc7ff",
+                        "on-surface-variant": "#c1c6d7",
+                        "tertiary-fixed-dim": "#c6c6cf",
+                        "surface-container-lowest": "#0e0e0f",
+                        "error": "#ffb4ab",
+                        "tertiary-container": "#909099",
+                        "on-primary-container": "#00285b",
+                        "primary-fixed": "#d8e2ff",
+                        "secondary-container": "#00d2ff",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#353436",
+                        "surface-container-high": "#2a2a2b",
+                        "on-tertiary-fixed-variant": "#45464e",
+                        "on-secondary-container": "#00566a",
+                        "on-primary-fixed-variant": "#004493",
+                        "background": "#131314",
+                        "tertiary": "#c6c6cf",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#131314",
+                        "on-secondary-fixed-variant": "#004e60",
+                        "secondary-fixed-dim": "#47d6ff",
+                        "surface-container": "#201f20",
+                        "surface-container-low": "#1c1b1c",
+                        "on-background": "#e5e2e3",
+                        "inverse-on-surface": "#313031",
+                        "on-secondary": "#003543",
+                        "outline-variant": "#414754",
+                        "on-primary-fixed": "#001a41",
+                        "inverse-primary": "#005bc0",
+                        "on-tertiary-container": "#282930",
+                        "on-surface": "#e5e2e3",
+                        "primary-container": "#4a8eff",
+                        "on-primary": "#002e68",
+                        "surface-variant": "#353436",
+                        "surface-tint": "#adc7ff",
+                        "secondary": "#a5e7ff",
+                        "on-secondary-fixed": "#001f28",
+                        "surface": "#131314",
+                        "on-error": "#690005",
+                        "on-tertiary": "#2f3037",
+                        "outline": "#8b90a0",
+                        "inverse-surface": "#e5e2e3",
+                        "secondary-fixed": "#b6ebff",
+                        "surface-bright": "#3a393a",
+                        "primary": "#adc7ff",
+                        "on-tertiary-fixed": "#1a1b22",
+                        "tertiary-fixed": "#e2e1eb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "headline-lg": ["Space Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "display-lg": ["Space Grotesk"],
+                        "title-md": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-md": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #131314;
+            color: #e5e2e3;
+            overflow-x: hidden;
+        }
+        
+        .glass-card {
+            background: rgba(42, 42, 43, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(193, 198, 215, 0.1);
+            position: relative;
+        }
+        
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(71, 214, 255, 0.05);
+            border-right: 1px solid rgba(71, 214, 255, 0.05);
+            pointer-events: none;
+            border-radius: inherit;
+        }
+        
+        .evidence-grid {
+            background-image: 
+                linear-gradient(to right, rgba(22, 22, 24, 0.5) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(22, 22, 24, 0.5) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        
+        .scan-line {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: rgba(71, 214, 255, 0.5);
+            box-shadow: 0 0 10px rgba(71, 214, 255, 0.8);
+            animation: scan 3s linear infinite;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+        
+        @keyframes scan {
+            0% { top: 0; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        
+        .glow-active {
+            box-shadow: 0 0 20px rgba(0, 180, 255, 0.1);
+        }
+        
+        .cyber-button-primary {
+            background-color: #adc7ff; /* primary */
+            color: #002e68; /* on-primary */
+            transition: all 0.3s ease;
+        }
+        
+        .cyber-button-primary:hover {
+            background-image: linear-gradient(135deg, #adc7ff 0%, #47d6ff 100%);
+            box-shadow: 0 0 15px rgba(71, 214, 255, 0.3);
+            color: #001f28;
+        }
+        
+        .cyber-button-secondary {
+            background: transparent;
+            border: 1px solid #47d6ff; /* secondary-fixed-dim */
+            color: #47d6ff;
+            backdrop-filter: blur(4px);
+            transition: all 0.3s ease;
+        }
+        
+        .cyber-button-secondary:hover {
+            background: rgba(71, 214, 255, 0.1);
+            box-shadow: 0 0 15px rgba(71, 214, 255, 0.2);
+        }
+        
+        .data-chip {
+            border: 1px solid rgba(139, 144, 160, 0.3); /* outline */
+            background: rgba(42, 42, 43, 0.5);
+        }
+        
+        .timeline-node::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #131314;
+            border: 2px solid #47d6ff;
+            box-shadow: 0 0 10px rgba(71, 214, 255, 0.5);
+            z-index: 2;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 0;
+            top: 15px;
+            bottom: -15px;
+            width: 1px;
+            background: rgba(71, 214, 255, 0.3);
+            z-index: 1;
+        }
+        
+        /* Mobile Specific Overrides */
+        @media (max-width: 768px) {
+            .section-spacing {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+        }
+    </style>
+</head>
+<body class="evidence-grid relative min-h-screen">
+<!-- Global Background Animation -->
+<div class="fixed inset-0 z-[-1] pointer-events-none opacity-40">
+<!-- STITCH_SHADER_START:ANIMATION_3 class="absolute inset-0 w-full h-full" -->
+<div class="absolute inset-0 w-full h-full" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_3" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_3');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+varying vec2 v_texCoord;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+
+float grid(vec2 uv, float res) {
+    vec2 grid = fract(uv * res);
+    return smoothstep(0.02, 0.0, grid.x) + smoothstep(0.02, 0.0, grid.y);
+}
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec3 color = vec3(0.039, 0.039, 0.043); // #0A0A0B (Surface)
+    
+    // Grid effect
+    float g = grid(uv, 10.0);
+    color += g * vec3(0.0, 0.48, 1.0) * 0.05; // Primary electric blue
+    
+    // Moving scan line
+    float scan = smoothstep(0.02, 0.0, abs(uv.y - mod(u_time * 0.2, 1.0)));
+    color += scan * vec3(0.0, 0.82, 1.0) * 0.1; // Cyan highlight
+    
+    // Pulse at mouse
+    float d = distance(uv, u_mouse / u_resolution);
+    float pulse = exp(-d * 10.0) * 0.05;
+    color += pulse * vec3(0.0, 0.82, 1.0);
+
+    gl_FragColor = vec4(color, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_3 -->
+</div>
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_20px_rgba(0,180,255,0.1)] fixed top-0 w-full z-50">
+<div class="flex items-center justify-between px-margin-mobile h-16 w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim cursor-pointer active:scale-95 transition-transform" data-icon="menu" id="menu-toggle">menu</span>
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" data-icon="biotech">biotech</span>
+<span class="font-label-caps text-label-caps tracking-widest text-primary-fixed-dim dark:text-primary-fixed-dim">PRIYA_SAINI</span>
+</div>
+<div class="hidden md:flex gap-6">
+<!-- Hidden on mobile as per requirement, handled by drawer -->
+</div>
+<div>
+<span class="font-label-caps text-[10px] text-secondary-fixed-dim border border-secondary-fixed-dim px-2 py-1 rounded bg-secondary-container/10">AVAILABLE_FOR_OPPORTUNITIES</span>
+</div>
+</div>
+</header>
+<!-- NavigationDrawer (Mobile) -->
+<nav class="bg-surface-container-lowest dark:bg-surface-container-lowest border-r border-outline-variant/20 shadow-2xl rounded-r-xl h-full fixed left-0 top-0 w-80 z-[60] transform -translate-x-full transition-transform ease-in-out duration-300" id="nav-drawer">
+<div class="p-6 h-full flex flex-col">
+<div class="flex justify-between items-center mb-8 border-b border-outline-variant/20 pb-4">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary">CASE_FILE:PRIYA</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="close" id="close-menu">close</span>
+</div>
+<ul class="flex flex-col gap-2 font-label-caps text-label-caps flex-grow">
+<!-- Home (Active) -->
+<li class="bg-secondary-container/20 text-secondary-fixed-dim border-l-4 border-secondary-fixed-dim px-4 py-3 rounded-r-lg flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+                    Home
+                </li>
+<!-- About -->
+<li class="text-on-surface-variant hover:bg-surface-container-high px-4 py-3 rounded-lg flex items-center gap-3 cursor-pointer hover:pl-6 transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="fingerprint">fingerprint</span>
+                    About
+                </li>
+<!-- Skills -->
+<li class="text-on-surface-variant hover:bg-surface-container-high px-4 py-3 rounded-lg flex items-center gap-3 cursor-pointer hover:pl-6 transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="science">science</span>
+                    Skills
+                </li>
+<!-- Experience -->
+<li class="text-on-surface-variant hover:bg-surface-container-high px-4 py-3 rounded-lg flex items-center gap-3 cursor-pointer hover:pl-6 transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="timeline">timeline</span>
+                    Experience
+                </li>
+<!-- Projects -->
+<li class="text-on-surface-variant hover:bg-surface-container-high px-4 py-3 rounded-lg flex items-center gap-3 cursor-pointer hover:pl-6 transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="folder_shared">folder_shared</span>
+                    Projects
+                </li>
+<!-- Achievements -->
+<li class="text-on-surface-variant hover:bg-surface-container-high px-4 py-3 rounded-lg flex items-center gap-3 cursor-pointer hover:pl-6 transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+                    Achievements
+                </li>
+<!-- Contact -->
+<li class="text-on-surface-variant hover:bg-surface-container-high px-4 py-3 rounded-lg flex items-center gap-3 cursor-pointer hover:pl-6 transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+                    Contact
+                </li>
+</ul>
+</div>
+</nav>
+<!-- Overlay for Drawer -->
+<div class="fixed inset-0 bg-black/50 z-[55] hidden backdrop-blur-sm" id="drawer-overlay"></div>
+<main class="pt-16 px-margin-mobile max-w-container-max mx-auto">
+<!-- Hero Section -->
+<section class="section-spacing min-h-[80vh] flex flex-col justify-center relative">
+<div class="z-10 relative">
+<div class="data-chip inline-block px-3 py-1 mb-4 rounded text-secondary-fixed-dim font-label-caps text-label-caps">
+                    [STATUS: ACTIVE_INVESTIGATION]
+                </div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-4">
+                    Turning Evidence <br/>
+<span class="text-primary-fixed-dim">Into Answers.</span>
+</h1>
+<h2 class="font-title-md text-title-md text-on-surface-variant mb-6 border-l-2 border-secondary-fixed-dim pl-4">
+                    Forensic Science Student &amp; Aspiring Investigator
+                </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-md">
+                    Applying rigorous scientific methodology to uncover the truth. Specializing in evidence analysis, digital forensics, and meticulous fieldwork.
+                </p>
+<div class="flex flex-col gap-4 w-full sm:flex-row sm:w-auto">
+<button class="cyber-button-primary font-label-caps text-label-caps px-6 py-3 rounded-lg flex items-center justify-center gap-2 w-full sm:w-auto">
+                        EXPLORE_MY_WORK
+                        <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="cyber-button-secondary font-label-caps text-label-caps px-6 py-3 rounded-lg flex items-center justify-center gap-2 w-full sm:w-auto">
+                        CONTACT_ME
+                    </button>
+</div>
+</div>
+<!-- 3D DNA Helix Background Element for Hero -->
+<div class="absolute right-0 top-1/2 transform -translate-y-1/2 w-64 h-64 z-0 opacity-60 pointer-events-none">
+<!-- STITCH_THREEJS_START:ANIMATION_4 class="absolute inset-0 w-full h-full" -->
+<div class="absolute inset-0 w-full h-full" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_4" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_4');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+container.appendChild(renderer.domElement);
+
+// Create a DNA Helix representation using spheres and lines
+const helixGroup = new THREE.Group();
+const curve = new THREE.CatmullRomCurve3([]);
+const points = 50;
+const radius = 2;
+const heightStep = 0.4;
+
+for (let i = 0; i < points; i++) {
+    const angle = i * 0.5;
+    const x = Math.cos(angle) * radius;
+    const z = Math.sin(angle) * radius;
+    const y = (i - points / 2) * heightStep;
+
+    // Strand 1
+    const sphere1 = new THREE.Mesh(
+        new THREE.SphereGeometry(0.1, 16, 16),
+        new THREE.MeshBasicMaterial({ color: 0x007bff })
+    );
+    sphere1.position.set(x, y, z);
+    helixGroup.add(sphere1);
+
+    // Strand 2
+    const sphere2 = new THREE.Mesh(
+        new THREE.SphereGeometry(0.1, 16, 16),
+        new THREE.MeshBasicMaterial({ color: 0x00d2ff })
+    );
+    sphere2.position.set(-x, y, -z);
+    helixGroup.add(sphere2);
+
+    // Connector
+    if (i % 2 === 0) {
+        const lineGeom = new THREE.BufferGeometry().setFromPoints([
+            new THREE.Vector3(x, y, z),
+            new THREE.Vector3(-x, y, -z)
+        ]);
+        const line = new THREE.Line(
+            lineGeom,
+            new THREE.LineBasicMaterial({ color: 0x333333, transparent: true, opacity: 0.5 })
+        );
+        helixGroup.add(line);
+    }
+}
+
+scene.add(helixGroup);
+camera.position.z = 12;
+
+function animate() {
+    requestAnimationFrame(animate);
+    helixGroup.rotation.y += 0.01;
+    helixGroup.rotation.x += 0.005;
+    renderer.render(scene, camera);
+}
+
+window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    renderer.setSize(w, h);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+});
+
+animate();
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_4 -->
+</div>
+</section>
+<!-- About Section -->
+<section class="section-spacing relative">
+<div class="flex items-center gap-2 mb-8 border-b border-outline-variant/30 pb-2">
+<span class="material-symbols-outlined text-secondary-fixed-dim" data-icon="person_search">person_search</span>
+<h2 class="font-title-md text-title-md text-on-surface">Behind the Evidence</h2>
+</div>
+<div class="flex flex-col gap-8">
+<!-- Portrait Placeholder -->
+<div class="w-full relative glass-card rounded-xl overflow-hidden p-2 aspect-[4/5] max-w-sm mx-auto">
+<div class="scan-line"></div>
+<div class="bg-cover bg-center w-full h-full rounded-lg border border-outline-variant/50" data-alt="A striking portrait of a young female forensic scientist in a highly advanced, clinical laboratory setting. The room is illuminated by high-key, cool blue and sterile white lighting, creating a modern light-mode cyber aesthetic. She is wearing sleek, futuristic protective eyewear and a pristine lab coat. The mood is authoritative, precise, and technologically advanced, with subtle holographic data overlays in the background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAQyvI--Bp-yRrXAvfVShrFr2azHcceyPq_I81HgGhGmGEqQduoANje2u727WCMYbjENDHUFzHu7zz1lvM45uiyj0RIt_mHf2_IoWCp92nxdbDaDuwBLOoRsfdLPDqqyG7Za_rJKC_DLIevldl4-jscwJOcP75jlnVAIcuaPDbIc__YIDseqkqJ3GLr9hK2x96iYSKB0Afabv_V6eFj6HErhEzR_hBOur-r4evGxB-NqeDLchdA-w-7')"></div>
+<!-- Reticle Accents -->
+<div class="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-secondary-fixed-dim"></div>
+<div class="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-secondary-fixed-dim"></div>
+<div class="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-secondary-fixed-dim"></div>
+<div class="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-secondary-fixed-dim"></div>
+</div>
+<div class="flex flex-col gap-6">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                        I am a dedicated forensic science student with a passion for decoding the silent narratives left behind at crime scenes. My approach combines traditional biological science with cutting-edge digital analysis to build comprehensive case files.
+                    </p>
+<!-- Stats Cards -->
+<div class="grid grid-cols-1 gap-4">
+<div class="glass-card p-4 rounded-lg flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="biotech">biotech</span>
+<div>
+<div class="font-label-caps text-label-caps text-secondary-fixed-dim">DISCIPLINE</div>
+<div class="font-body-lg text-body-lg font-bold text-on-surface">Forensic Science</div>
+</div>
+</div>
+<div class="glass-card p-4 rounded-lg flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="science">science</span>
+<div>
+<div class="font-label-caps text-label-caps text-secondary-fixed-dim">METHODOLOGY</div>
+<div class="font-body-lg text-body-lg font-bold text-on-surface">Practical Experience</div>
+</div>
+</div>
+<div class="glass-card p-4 rounded-lg flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="query_stats">query_stats</span>
+<div>
+<div class="font-label-caps text-label-caps text-secondary-fixed-dim">APPROACH</div>
+<div class="font-body-lg text-body-lg font-bold text-on-surface">Research Driven</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="section-spacing">
+<div class="flex items-center gap-2 mb-8 border-b border-outline-variant/30 pb-2">
+<span class="material-symbols-outlined text-secondary-fixed-dim" data-icon="memory">memory</span>
+<h2 class="font-title-md text-title-md text-on-surface">Skill Vectors</h2>
+</div>
+<div class="flex flex-col gap-6">
+<!-- Forensic Skills -->
+<div class="glass-card p-5 rounded-xl">
+<h3 class="font-label-caps text-label-caps text-primary-fixed-dim mb-4 border-b border-outline-variant/20 pb-2">[CATEGORY: FORENSIC_ANALYSIS]</h3>
+<div class="flex flex-wrap gap-2">
+<span class="data-chip px-2 py-1 rounded text-body-sm text-on-surface-variant font-label-caps text-xs">Crime Scene Investigation</span>
+<span class="data-chip px-2 py-1 rounded text-body-sm text-on-surface-variant font-label-caps text-xs">Evidence Collection</span>
+<span class="data-chip px-2 py-1 rounded text-body-sm text-on-surface-variant font-label-caps text-xs">Fingerprint Analysis</span>
+<span class="data-chip px-2 py-1 rounded text-body-sm text-on-surface-variant font-label-caps text-xs">Toxicology</span>
+</div>
+</div>
+<!-- Technical Skills -->
+<div class="glass-card p-5 rounded-xl">
+<h3 class="font-label-caps text-label-caps text-primary-fixed-dim mb-4 border-b border-outline-variant/20 pb-2">[CATEGORY: DIGITAL_&amp;_TECHNICAL]</h3>
+<div class="flex flex-wrap gap-2">
+<span class="data-chip px-2 py-1 rounded text-body-sm text-on-surface-variant font-label-caps text-xs">Data Analysis</span>
+<span class="data-chip px-2 py-1 rounded text-body-sm text-on-surface-variant font-label-caps text-xs">Photography</span>
+<span class="data-chip px-2 py-1 rounded text-body-sm text-on-surface-variant font-label-caps text-xs">Report Writing</span>
+<span class="data-chip px-2 py-1 rounded text-body-sm text-on-surface-variant font-label-caps text-xs">Lab Equipment</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Timeline -->
+<section class="section-spacing">
+<div class="flex items-center gap-2 mb-8 border-b border-outline-variant/30 pb-2">
+<span class="material-symbols-outlined text-secondary-fixed-dim" data-icon="timeline">timeline</span>
+<h2 class="font-title-md text-title-md text-on-surface">Field Experience</h2>
+</div>
+<div class="relative pl-6">
+<!-- Timeline Line -->
+<div class="timeline-line"></div>
+<!-- Node 1 -->
+<div class="relative timeline-node mb-8 pb-4 border-b border-outline-variant/20">
+<div class="font-label-caps text-label-caps text-secondary-fixed-dim mb-1">2023 - PRESENT</div>
+<div class="font-body-lg text-body-lg font-bold text-on-surface mb-2">Student Investigator</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant italic mb-2">University Lab</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                        Conducted mock crime scene investigations, managed chain of custody protocols, and performed initial evidence sorting.
+                    </p>
+</div>
+<!-- Node 2 -->
+<div class="relative timeline-node">
+<div class="font-label-caps text-label-caps text-secondary-fixed-dim mb-1">2022 - 2023</div>
+<div class="font-body-lg text-body-lg font-bold text-on-surface mb-2">Lab Assistant</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant italic mb-2">Forensic Biology Dept.</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                        Assisted in preparing samples for DNA extraction and maintained sterile lab environments.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Projects Section (Case Studies) -->
+<section class="section-spacing">
+<div class="flex items-center gap-2 mb-8 border-b border-outline-variant/30 pb-2">
+<span class="material-symbols-outlined text-secondary-fixed-dim" data-icon="folder_special">folder_special</span>
+<h2 class="font-title-md text-title-md text-on-surface">Case Files</h2>
+</div>
+<div class="flex flex-col gap-6">
+<!-- Project 1 -->
+<div class="glass-card rounded-xl overflow-hidden group">
+<div class="h-32 relative overflow-hidden">
+<div class="bg-cover bg-center w-full h-full opacity-60 group-hover:opacity-80 transition-opacity" data-alt="A close-up, highly detailed view of a digital forensic analysis screen in a dark, high-tech lab. The screen displays complex data structures, glowing cyan hex codes, and a partially reconstructed hard drive image. The lighting is low-key, with strong, cool blue light emanating from the monitors, creating a moody, cyber-minimalist aesthetic. The focus is sharp on the data, blurring out the background equipment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAPWIRk7N3HI1NQEv5ynRIIweZ8XHByduiQwYCVTQPOPb9rnwfyywNPBWa7ld4JR0hPIgZ9ABdgi67n6vbygIG9hKK_7vSnwLytsqizGlkhzY1b4pB0M-4ODYN0NzbjI4uv0ViSpFMH9OqHGCgRwjiyQMPCBVBdVLqrLpESjEANTFFLh8ihDtUtKCjF8YLpzK6Ptan22e65wQBYuOTBIlwXm7xgBxCmV2WAXaJRiRtHkbz-Bi99sT5a')"></div>
+<div class="absolute top-2 left-2 data-chip px-2 py-1 rounded text-xs text-primary-fixed-dim font-label-caps">CASE:01</div>
+</div>
+<div class="p-4 border-t border-outline-variant/30">
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface mb-2">Digital Footprint Recovery</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+                            Simulated recovery of deleted files from compromised storage media to establish a timeline of events.
+                        </p>
+<button class="text-secondary-fixed-dim font-label-caps text-label-caps flex items-center gap-1 hover:text-primary transition-colors">
+                            VIEW_REPORT <span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="glass-card rounded-xl overflow-hidden group">
+<div class="h-32 relative overflow-hidden">
+<div class="bg-cover bg-center w-full h-full opacity-60 group-hover:opacity-80 transition-opacity" data-alt="A dramatic, clinical macro photograph of charred debris being analyzed under a bright, sterile lab light. The scene includes precise measuring tools and sample collection swabs resting on a metallic surface. The lighting is high-contrast, emphasizing the textures of the ash against the clean, cyber-minimalist environment. Subtle glowing cyan grid lines are superimposed over the image to indicate analysis zones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAV0G8_riiLkyduk_WYCWsYfqXTqv_UTo03N1szS_oUkF89FJ9fjGE1eYojpIylGLgaPnDN-pZz7E6Wh0QTsH8GwRLnEGF53UrxK62mvl2movcfhMSRoFSAKNh9l_aow0Mkckme3-_yBwn-VQN4DensPizBt0LKFmKzOCgN8WGs9gYwleMT752TdnLtbb7R4NETJ20K3w32crXc2hQNuWjgWlylzacgNY1hrPYYg7iuaR5ZIF97rLh-')"></div>
+<div class="absolute top-2 left-2 data-chip px-2 py-1 rounded text-xs text-primary-fixed-dim font-label-caps">CASE:02</div>
+</div>
+<div class="p-4 border-t border-outline-variant/30">
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface mb-2">Fire Debris Analysis</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+                            Examination of burn patterns and chemical residue to determine the point of origin in a simulated arson case.
+                        </p>
+<button class="text-secondary-fixed-dim font-label-caps text-label-caps flex items-center gap-1 hover:text-primary transition-colors">
+                            VIEW_REPORT <span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full py-12 border-t border-outline-variant/30 mt-12 relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile gap-gutter w-full max-w-container-max mx-auto">
+<div class="flex flex-col items-center md:items-start mb-6 md:mb-0">
+<span class="font-label-caps text-label-caps text-primary-fixed-dim mb-2">PRIYA SAINI</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">© 2024 FORENSIC_PORTFOLIO_V1.0</span>
+</div>
+<div class="flex gap-6 font-label-caps text-label-caps">
+<!-- Links (Styled as per JSON) -->
+<a class="text-on-surface-variant hover:text-secondary-fixed-dim transition-colors opacity-80 hover:opacity-100 flex items-center gap-1" href="#">
+                    LinkedIn
+                </a>
+<a class="text-on-surface-variant hover:text-secondary-fixed-dim transition-colors opacity-80 hover:opacity-100 flex items-center gap-1" href="#">
+                    GitHub
+                </a>
+<a class="text-on-surface-variant hover:text-secondary-fixed-dim transition-colors opacity-80 hover:opacity-100 flex items-center gap-1" href="#">
+                    ResearchGate
+                </a>
+</div>
+</div>
+</footer>
+<!-- Interactive Scripts -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const closeMenu = document.getElementById('close-menu');
+            const navDrawer = document.getElementById('nav-drawer');
+            const drawerOverlay = document.getElementById('drawer-overlay');
+
+            function toggleDrawer() {
+                const isClosed = navDrawer.classList.contains('-translate-x-full');
+                if (isClosed) {
+                    navDrawer.classList.remove('-translate-x-full');
+                    drawerOverlay.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                } else {
+                    navDrawer.classList.add('-translate-x-full');
+                    drawerOverlay.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }
+            }
+
+            menuToggle.addEventListener('click', toggleDrawer);
+            closeMenu.addEventListener('click', toggleDrawer);
+            drawerOverlay.addEventListener('click', toggleDrawer);
+        });
+    </script>
+</body></html>
