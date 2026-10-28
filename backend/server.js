@@ -1,112 +1,174 @@
 // ==========================================
-// Forensic Science Portfolio - Backend Server
+// Forensic Science Portfolio - Node.js Backend Server
 // ==========================================
 
-// 1. Import required dependencies
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
+const path = require('path');
 
-// 2. Load environment variables from .env file into process.env
 dotenv.config();
 
-// 3. Initialize the Express application
 const app = express();
-
-// 4. Set server port from environment variable (.env) or default to 5000
 const PORT = process.env.PORT || 5000;
 
-// ------------------------------------------
-// Middleware Setup
-// ------------------------------------------
-
-// Enable CORS so your frontend can communicate with this API
+// Enable CORS so the React frontend can communicate with Node.js
 app.use(cors());
 
-// Enable parsing of JSON request bodies
+// Enable parsing of JSON & URL-encoded bodies
 app.use(express.json());
-
-// Enable parsing of URL-encoded request bodies
 app.use(express.urlencoded({ extended: true }));
 
-const path = require('path');
-const fs = require('fs');
+// ------------------------------------------
+// In-Memory Database for Forensic Cases
+// ------------------------------------------
+const cases = [
+  {
+    id: 'CASE-01',
+    category: 'Digital Forensics',
+    title: 'Digital Footprint & Encrypted Storage Recovery',
+    subtitle: 'Reconstruction of deleted disk sectors in compromised server hardware',
+    summary: 'Executed low-level hex recovery and raw byte forensic extraction on corrupted solid-state storage. Rebuilt FAT/NTFS metadata tables to re-establish chronological timelines for evidentiary presentation.',
+    date: '2024-03-12',
+    tags: ['Hex Dump', 'EnCase Protocol', 'Chain of Custody', 'SHA-256 Hash Matching'],
+    status: 'SOLVED',
+    integrityScore: '99.8%',
+    findings: [
+      'Identified hidden volume spanning unpartitioned cluster blocks (sector 0x4F12A).',
+      'Recovered 42 deleted transaction logs matching suspect timestamp profile.',
+      'Validated cryptographic chain of custody adhering to ISO/IEC 27037 standards.'
+    ]
+  },
+  {
+    id: 'CASE-02',
+    category: 'Arson & Chemical',
+    title: 'Fire Debris & Hydrocarbon Accelerant Analysis',
+    subtitle: 'GC-MS gas chromatography identification of chemical burn patterns',
+    summary: 'Analyzed charred floor substrate remnants using solid-phase microextraction (SPME) coupled with GC-MS. Successfully determined pour pattern points of origin and distinguished commercial distillates from synthetic accelerants.',
+    date: '2023-11-28',
+    tags: ['Gas Chromatography', 'Mass Spectrometry', 'Thermal Degradation', 'Origin Point'],
+    status: 'SOLVED',
+    integrityScore: '98.4%',
+    findings: [
+      'Detected medium petroleum distillates (mineral spirits) inside baseboard sub-surface.',
+      'Correlated V-pattern thermal signatures with localized volatile hydrocarbon concentrations.',
+      'Eliminated accidental electrical origin via arc mapping microscopic inspection.'
+    ]
+  },
+  {
+    id: 'CASE-03',
+    category: 'Biological & DNA',
+    title: 'Trace DNA Isolation & STR Profiling',
+    subtitle: 'Ultra-low copy number nuclear DNA extraction from weathered latent touch evidence',
+    summary: 'Applied silica-membrane column extraction to isolate degraded cellular touch DNA. Amplified 24 short tandem repeat (STR) loci with capillary electrophoresis comparison.',
+    date: '2023-06-15',
+    tags: ['STR Profiling', 'PCR Amplification', 'Capillary Electrophoresis', 'Touch DNA'],
+    status: 'SOLVED',
+    integrityScore: '99.9%',
+    findings: [
+      'Extracted 0.08 ng/uL high-purity template from swabbed vehicle steering column.',
+      'Generated a 21-allele concordant STR profile matching CODIS reference profile.',
+      'Achieved random match probability exceeding 1 in 10 billion.'
+    ]
+  },
+  {
+    id: 'CASE-04',
+    category: 'Ballistics & Toolmarks',
+    title: 'Microscopic Striation Matching & Trajectory Vectoring',
+    subtitle: '3D confocal surface topography of firearm rifling impressions',
+    summary: 'Performed 3D optical profilometry on discharged 9mm projectile fragments. Mapped land and groove striation marks using automated comparison microscopy to definitively identify firearm barrel.',
+    date: '2022-09-04',
+    tags: ['Comparison Microscopy', 'Trajectory Laser Mapping', 'IBIS Integration', 'Toolmarks'],
+    status: 'SOLVED',
+    integrityScore: '97.6%',
+    findings: [
+      'Matched 14 consecutive matching striation striae (CMS) exceeding AFTE criteria.',
+      '3D laser trajectory scan confirmed firing elevation at 14.2 degrees azimuth.',
+      'Recovered unburnt propellant residue consistent with double-base smokeless powder.'
+    ]
+  }
+];
 
 // ------------------------------------------
-// Static Files Setup (Frontend)
-// ------------------------------------------
-const frontendRoot = path.join(__dirname, '../frontend');
-const frontendPath = fs.existsSync(path.join(frontendRoot, 'priya_saini_portfolio_forensic_science'))
-  ? path.join(frontendRoot, 'priya_saini_portfolio_forensic_science')
-  : (fs.existsSync(frontendRoot)
-      ? frontendRoot
-      : path.join(__dirname, '../stitch_forensic_nexus_portfolio/priya_saini_portfolio_forensic_science'));
-
-// Serve the main portfolio folder and the entire frontend directory
-app.use(express.static(frontendPath));
-if (fs.existsSync(frontendRoot)) {
-  app.use(express.static(frontendRoot));
-  app.use('/static', express.static(frontendRoot));
-}
-
-// ------------------------------------------
-// Routes
+// Node.js API Routes
 // ------------------------------------------
 
-// Serve Main Frontend Portfolio at localhost:5000/
-app.get('/', (req, res) => {
-  const targetFile = fs.existsSync(path.join(frontendPath, 'index.html'))
-    ? 'index.html'
-    : 'code.html';
-  res.sendFile(path.join(frontendPath, targetFile));
-});
-
-// GET /api - API status check
+// GET /api - System Status
 app.get('/api', (req, res) => {
   res.json({
     status: 'online',
-    project: 'Forensic Science Portfolio API',
+    runtime: 'Node.js ' + process.version,
+    server: 'Express.js Forensic API Server',
     endpoints: {
-      test: '/api/test'
+      status: '/api',
+      test: '/api/test',
+      cases: '/api/cases',
+      contact: '/api/contact'
+    },
+    timestamp: new Date().toISOString()
+  });
+});
+
+// GET /api/test - Verification Route
+app.get('/api/test', (req, res) => {
+  res.status(200).json({
+    message: 'Backend is working in Node.js!',
+    status: 200,
+    timestamp: new Date().toISOString()
+  });
+});
+
+// GET /api/cases - List Forensic Cases with Category Filtering
+app.get('/api/cases', (req, res) => {
+  const { category } = req.query;
+  if (category && category !== 'All') {
+    const filtered = cases.filter(c => c.category.toLowerCase().includes(category.toLowerCase()));
+    return res.json({ success: true, count: filtered.length, data: filtered });
+  }
+  res.json({ success: true, count: cases.length, data: cases });
+});
+
+// POST /api/contact - Intake and Consultation Logging
+app.post('/api/contact', (req, res) => {
+  const { name, email, agency, caseType, message } = req.body;
+  if (!name || !email || !message) {
+    return res.status(400).json({
+      success: false,
+      error: 'Name, email, and message are required.'
+    });
+  }
+
+  const caseRef = `FN-${Math.floor(1000 + Math.random() * 9000)}-${new Date().getFullYear()}`;
+
+  res.status(201).json({
+    success: true,
+    caseRef,
+    message: 'Forensic consultation request logged into Nexus intake system.',
+    intakeData: {
+      caseRef,
+      sender: name,
+      agency: agency || 'Independent Researcher',
+      caseType: caseType || 'General Inquest',
+      loggedAt: new Date().toISOString(),
+      status: 'PENDING_TRIAGE'
     }
   });
 });
 
-// GET /api/test - Required test route
-app.get('/api/test', (req, res) => {
-  res.status(200).json({
-    message: 'Backend is working!'
-  });
-});
-
-// ------------------------------------------
-// Error Handling Middleware
-// ------------------------------------------
-
-// 404 Handler: Triggered when a requested route does not exist
-app.use((req, res, next) => {
+// 404 Handler
+app.use((req, res) => {
   res.status(404).json({
     error: 'Not Found',
     message: `Cannot ${req.method} ${req.originalUrl}`
   });
 });
 
-// Global Error Handler: Catches any unhandled errors in route handlers
-app.use((err, req, res, next) => {
-  console.error('Server Error:', err.stack);
-  res.status(err.status || 500).json({
-    error: 'Internal Server Error',
-    message: err.message || 'Something went wrong on the server.'
-  });
-});
-
-// ------------------------------------------
 // Start Server
-// ------------------------------------------
 app.listen(PORT, () => {
   console.log(`========================================`);
-  console.log(`🚀 Forensic Backend Server is running!`);
+  console.log(`🚀 Forensic Node.js Backend Server running!`);
   console.log(`📍 URL: http://localhost:${PORT}`);
   console.log(`🧪 Test Endpoint: http://localhost:${PORT}/api/test`);
+  console.log(`🔬 Cases Endpoint: http://localhost:${PORT}/api/cases`);
   console.log(`========================================`);
 });
